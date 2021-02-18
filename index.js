@@ -7,6 +7,7 @@ let $result = document.querySelector('#result')
 let $gameTime = document.querySelector('#game-time')
 let $time = document.querySelector('#time')
 let $controlButtons = document.querySelector('#control-buttons')
+let $stopGame = document.querySelector('#stop-game')
 let score = 0
 let isGameStarted = false
 
@@ -24,6 +25,7 @@ $start.addEventListener('click', startGame)
 document.addEventListener('click', boxClick)
 $gameTime.addEventListener('input', setTime)
 $controlButtons.addEventListener('click', timeChange)
+$stopGame.addEventListener('click', stopGame)
 
 function startGame() {
     isGameStarted = true
