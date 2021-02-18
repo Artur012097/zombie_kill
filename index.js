@@ -6,6 +6,7 @@ let $resultHeader = document.querySelector('#result-header')
 let $result = document.querySelector('#result')
 let $gameTime = document.querySelector('#game-time')
 let $time = document.querySelector('#time')
+let $controlButtons = document.querySelector('#control-buttons')
 let score = 0
 let isGameStarted = false
 
@@ -22,6 +23,7 @@ function hide($el) {
 $start.addEventListener('click', startGame)
 document.addEventListener('click', boxClick)
 $gameTime.addEventListener('input', setTime)
+$controlButtons.addEventListener('click', timeChange)
 
 function startGame() {
     isGameStarted = true
@@ -29,6 +31,7 @@ function startGame() {
     hide(start)
     $game.style.backgroundColor = red
     $gameTime.setAttribute('disabled', 'true')
+    hide($controlButtons)
     setTime()
     setGameTime()
     renderBox()
@@ -58,6 +61,7 @@ function stopGame () {
     hide($timeHeader)
     show($resultHeader)
     $gameTime.removeAttribute('disabled')
+    show($controlButtons)
     setResult()
 }
 
@@ -65,10 +69,23 @@ function setResult() {
     $result.textContent = score
 }
 
-function setTime() {
-    let setGameTime = $gameTime.value
+function timeChange(e) {
+    if (e.target.dataset.remove) {
+        $gameTime.value --
+        if ($gameTime.value <= 0) {
+            $gameTime.value = 0
+        }
+    } 
+    else if (e.target.dataset.add) {
+        $gameTime.value ++
+    }
+    setTime()
+}
 
-    $time.textContent = setGameTime + '.0'
+function setTime() {
+    let getGameTime = $gameTime.value
+
+    $time.textContent = getGameTime + '.0'
 
     show($timeHeader)
     hide($resultHeader)

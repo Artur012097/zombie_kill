@@ -51,13 +51,30 @@ body {
 }
 
 .input {
+  width: 300px;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  position: relative;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.control__button {
+  width: 30px;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  margin: 0 2px;
+}
+
+.control__button:hover {
+  cursor: pointer;
 }
 
 .input label {
   display: inline-block;
+  position: absolute;
+  top: -20px;
   max-width: 100%;
   margin-bottom: 3px;
   color: #acacac;
@@ -69,7 +86,7 @@ body {
 
 .input input {
   display: block;
-  width: 100%;
+  width: 80px;
   max-height: 2.8rem;
   padding: .8rem 1rem;
   font-size: inherit;
