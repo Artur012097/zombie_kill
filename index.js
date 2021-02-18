@@ -8,6 +8,8 @@ let $gameTime = document.querySelector('#game-time')
 let $time = document.querySelector('#time')
 let $controlButtons = document.querySelector('#control-buttons')
 let $stopGame = document.querySelector('#stop-game')
+const gameStartMusic = new Audio('../audio/game-start.mp3')
+const gameEndMusic = new Audio('../audio/game-end.mp3')
 let score = 0
 let isGameStarted = false
 
@@ -37,6 +39,22 @@ function startGame() {
     setTime()
     setGameTime()
     renderBox()
+    startMusic()
+}
+
+function stopGame () {
+    isGameStarted = false
+    $game.innerHTML = ''
+    setTimeout(() => {
+        show($start)
+    }, 1300)
+    $game.style.backgroundColor = gray
+    hide($timeHeader)
+    show($resultHeader)
+    $gameTime.removeAttribute('disabled')
+    show($controlButtons)
+    endMusic()
+    setResult()
 }
 
 function setGameTime() {
@@ -53,18 +71,16 @@ function setGameTime() {
     },100)
 }
 
-function stopGame () {
-    isGameStarted = false
-    $game.innerHTML = ''
-    setTimeout(() => {
-        show($start)
-    }, 1000)
-    $game.style.backgroundColor = gray
-    hide($timeHeader)
-    show($resultHeader)
-    $gameTime.removeAttribute('disabled')
-    show($controlButtons)
-    setResult()
+function endMusic() {
+    gameStartMusic.pause()
+    gameStartMusic.currentTime = 0
+    gameEndMusic.play()
+}
+
+function startMusic() {
+    gameStartMusic.play()
+    gameEndMusic.pause()
+    gameEndMusic.currentTime = 0
 }
 
 function setResult() {
@@ -105,7 +121,7 @@ function boxClick(e) {
 function renderBox() {
     // clear html after render next box
     $game.innerHTML = ''
-    // xox create after start button click
+    // box create after start button click
     let box = document.createElement('div')
     // box random size render
     let boxSize = randomBox(30, 100)
@@ -135,6 +151,7 @@ function renderBox() {
     // set created div on game box
     $game.insertAdjacentElement('afterbegin', box)
 }
+
 // random background color for rendered boxes
 function letBoxBg() {
     return boxBg[randomBox(0, boxBg.length)]
