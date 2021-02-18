@@ -120,7 +120,8 @@ function renderBox() {
     box.style.backgroundImage = letBoxBg()
     box.style.backgroundRepeat = 'no-repeat'
     box.style.backgroundSize = 'cover'
-    box.style.border = `1px solid${gray}`;
+    box.style.backgroundColor = '#7a8577'
+    box.style.borderRadius = '5px';
     box.style.position = 'absolute'
     // set box random position top
     box.style.top = randomBox(0, maxTop) + 'px'

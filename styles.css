@@ -110,6 +110,15 @@ body {
   min-width: 300px;
   max-width: 300px;
   max-height: 300px;
+  border-radius: 5px;
+}
+
+.score-show {
+  position: absolute;
+  top: 0;
+  left: 134px;
+  color: #fff;
+  font-size: 1.3rem;
 }
 
 .hide {
@@ -156,4 +165,24 @@ body {
 .btn:hover {
   box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
   transform: translateY(-1px);
+}
+
+@media (max-width: 990px) {
+  #header-result, #time-header {
+    font-size: 1.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .app {
+    padding: 0;
+  }
+  #header-result, #time-header {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 450px) {
+  #header-result, #time-header {
+    font-size: 1.4rem;
+  }
 }
