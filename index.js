@@ -73,7 +73,7 @@ function timeChange(e) {
     if (e.target.dataset.remove) {
         $gameTime.value --
         if ($gameTime.value <= 0) {
-            $gameTime.value = 0
+            $gameTime.value = 1
         }
     } 
     else if (e.target.dataset.add) {
