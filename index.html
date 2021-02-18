@@ -8,31 +8,38 @@
   <title>Zombie kill</title>
 </head>
 <body>
-
-
+  <!-- game app wrapper -->
   <div class="app">
+    <!-- game app header -->
     <div class="app__header">
+      <!-- game duration time show -->
       <h1 id="time-header" class="white-color">Время игры: <span id="time">5.0</span> (сек)</h1>
+      <!-- game result show -->
       <h1 id="result-header" class="hide white-color">Ваш результат: <span id="result"></span></h1>
     </div>
-    <!-- Game app content -->
+    <!-- game app content -->
     <div class="app__content">
-      <!-- App start button -->
+      <!-- game app start button -->
       <button class="btn" id="start">
         Вперед
       </button>
       <!-- App content show block -->
       <div class="game" id="game"></div>
     </div>
-
+    <!-- Game app footer -->
     <div class="app__footer">
       <div class="input">
+        <!-- Game duration time set input label -->
         <label for="game-time">Время игры, (сек)</label>
+        <!-- Game duration time set input -->
         <input type="number" id="game-time" min="5" step="1" value="5">
+        <!-- Game tame set control buttons -->
         <div class="control" id="control-buttons">
+          <!-- time remove -->
           <button class="control__button" id="remove-time" data-remove="true">
             -
           </button>
+          <!-- time add -->
           <button class="control__button" id="add-time" data-add="true">
             +
           </button>

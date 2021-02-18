@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Verdana', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:$gray;
+  }
+  
+  .app {
+    background-image: url(../img/game-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    box-shadow: 0 0px 35px 40px rgba(0,0,0,0.20);
+    border-radius: 10px;
+    &__header {
+        padding: 20px;
+        text-align: center;
+      }
+    &__content {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    }
+    &__footer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+  
+  .white-color {
+    color: $white;
+  }
+
+  .control__button {
+    width: 40px;
+    height: 100%;
+    background: none;
+    background-color: $white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin: 0 5px;
+    &:hover {
+        cursor: pointer;
+      }
+  }
+  
+  .input {
+    width: 400px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 10px;
+    label {
+        display: inline-block;
+        position: absolute;
+        top: -20px;
+        max-width: 100%;
+        margin-bottom: 3px;
+        color: $white;
+        font-size: .8rem;
+        font-weight: normal;
+        line-height: 1.2rem;
+      }
+      input {
+        display: block;
+        width: 105px;
+        max-height: 2.8rem;
+        padding: .8rem 1rem;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: 1.4;
+        color: $black;
+        background: $white none;
+        border: 1px solid #999;
+        border-radius: 5px;
+      }
+  }
+  
+  .game {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $gray-light;
+    background: $gray-light;
+    box-sizing: border-box;
+    width: 400px;
+    height: 350px;
+    border-radius: 5px;
+  }
+  
+  .hide {
+    display: none!important;
+  }
+  
+  .btn {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    padding: 1rem 2.3rem;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background: $yellow-orange;
+    color: $gray-dark;
+    border: none;
+    border-radius: 2.8rem;
+    transition: transform .2s ease-in-out,box-shadow .2s ease-in-out,-webkit-transform .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+    will-change: transform;
+    &:disabled {
+        background: $gray-light!important;
+        border: 1px solid $gray-light;
+        color: $black;
+        cursor: not-allowed;
+      }
+      &:active {
+        transition: transform .1s ease-in-out,box-shadow .1s ease-in-out!important;
+        transform: none!important;
+        box-shadow: none!important;
+      }
+      &:hover {
+        box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+        transform: translateY(-1px);
+      }
+  }
+
+  @media (max-width: 990px) {
+    #header-result, #time-header {
+      font-size: 1.9rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .app {
+      padding: 0;
+    }
+    #header-result, #time-header {
+      font-size: 1.7rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    #header-result, #time-header {
+      font-size: 1.4rem;
+    }
+    .app {
+      width: 100%;
+      height: 100vh;
+    }
+    .input {
+      width: 300px;
+    }
+    .game {
+      width: 350px;
+      height: 350px;
+    }
+  }
+  
+  @media (max-width: 310px) {
+    #header-result, #time-header {
+        font-size: 1.2rem;
+      }
+    .input {
+      width: 250px;
+    }
+    .game {
+      width: 250px;
+      height: 250px;
+    }
+  }
