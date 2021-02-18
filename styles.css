@@ -13,11 +13,13 @@ body {
   align-items: center;
   padding: 20px;
   overflow: hidden;
-  background: linear-gradient(#CB356B, #BD3F32);
+  background:#7a8577;
 }
 
 .app {
-  background: #fff;
+  background-image: url(./img/game-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 20px;
   width: 600px;
   margin: 0 auto;
@@ -42,6 +44,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.white-color {
+  color: #fff;
 }
 
 .input {

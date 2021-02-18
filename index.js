@@ -27,10 +27,14 @@ function startGame() {
     isGameStarted = true
     score = 0
     hide(start)
-    $game.style.backgroundColor = white
+    $game.style.backgroundColor = red
     $gameTime.setAttribute('disabled', 'true')
     setTime()
+    setGameTime()
+    renderBox()
+}
 
+function setGameTime() {
     let interval = setInterval(function() {
         // let variable vor set game time
         let time = parseFloat($time.textContent)
@@ -42,8 +46,6 @@ function startGame() {
             $time.textContent = (time - 0.1).toFixed(1)
         }
     },100)
-    
-    renderBox()
 }
 
 function stopGame () {
@@ -98,7 +100,10 @@ function renderBox() {
     // set box random height
     box.style.height = boxSize + 'px'
     // set box random background color from function
-    box.style.backgroundColor = letBoxBg()
+    box.style.backgroundImage = letBoxBg()
+    box.style.backgroundRepeat = 'no-repeat'
+    box.style.backgroundSize = 'cover'
+    box.style.border = `1px solid${gray}`;
     box.style.position = 'absolute'
     // set box random position top
     box.style.top = randomBox(0, maxTop) + 'px'
@@ -112,7 +117,7 @@ function renderBox() {
 }
 // random background color for rendered boxes
 function letBoxBg() {
-    return boxColors[randomBox(0, boxColors.length)]
+    return boxBg[randomBox(0, boxBg.length)]
 }
 // randomiser, random numbers from min to max
 function randomBox(min, max) {
