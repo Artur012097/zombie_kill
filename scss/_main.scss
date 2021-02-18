@@ -50,6 +50,16 @@
     color: $white;
   }
 
+  .game-score {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+  }
+
   .control__button, .stop-game {
     width: 40px;
     height: 100%;
@@ -190,6 +200,9 @@
     }
     .input {
       width: 300px;
+      input {
+        width: 45px;
+      }
     }
     .game {
       width: 350px;
