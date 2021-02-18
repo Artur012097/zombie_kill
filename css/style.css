@@ -53,7 +53,7 @@ body {
   color: #fff;
 }
 
-.control__button {
+.control__button, .stop-game {
   width: 40px;
   height: 100%;
   background: none;
@@ -64,8 +64,25 @@ body {
   margin: 0 5px;
 }
 
-.control__button:hover {
+.control__button:hover, .stop-game:hover {
   cursor: pointer;
+  opacity: 0.8;
+}
+
+.stop-game {
+  display: block;
+  color: red;
+  height: auto;
+  transition: 0.2s ease;
+}
+
+.stop-game:hover {
+  background-color: red;
+}
+
+.stop-game:hover i {
+  color: #fff;
+  transition: 0.2s ease;
 }
 
 .input {

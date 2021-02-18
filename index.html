@@ -4,49 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Zombie kill</title>
 </head>
 <body>
   <!-- game app wrapper -->
   <div class="app">
-    <!-- game app header -->
-    <div class="app__header">
-      <!-- game duration time show -->
-      <h1 id="time-header" class="white-color">Время игры: <span id="time">5.0</span> (сек)</h1>
-      <!-- game result show -->
-      <h1 id="result-header" class="hide white-color">Ваш результат: <span id="result"></span></h1>
-    </div>
-    <!-- game app content -->
-    <div class="app__content">
+      <!-- game app header -->
+      <div class="app__header">
+          <!-- game duration time show -->
+          <h1 id="time-header" class="white-color">Время игры: <span id="time">5.0</span> (сек)</h1>
+          <!-- game result show -->
+          <h1 id="result-header" class="hide white-color">Ваш результат: <span id="result"></span></h1>
+      </div>
+  <!-- game app content -->
+  <div class="app__content">
       <!-- game app start button -->
       <button class="btn" id="start">
-        Вперед
+          Вперед
       </button>
       <!-- App content show block -->
-      <div class="game" id="game"></div>
-    </div>
-    <!-- Game app footer -->
-    <div class="app__footer">
-      <div class="input">
-        <!-- Game duration time set input label -->
-        <label for="game-time">Время игры, (сек)</label>
-        <!-- Game duration time set input -->
-        <input type="number" id="game-time" min="5" step="1" value="5">
-        <!-- Game tame set control buttons -->
-        <div class="control" id="control-buttons">
-          <!-- time remove -->
-          <button class="control__button" id="remove-time" data-remove="true">
-            -
-          </button>
-          <!-- time add -->
-          <button class="control__button" id="add-time" data-add="true">
-            +
-          </button>
-        </div>
+      <div class="game" id="game">
+
       </div>
-    </div>
   </div>
+  <!-- Game app footer -->
+  <div class="app__footer">
+      <div class="input">
+          <!-- Game duration time set input label -->
+          <label for="game-time">Время игры, (сек)</label>
+          <!-- Game duration time set input -->
+          <input type="number" id="game-time" min="5" step="1" value="5">
+          <!-- game stop button -->
+          <button class="stop-game control__button" id="stop-game">
+              <i class="far fa-stop-circle"></i>
+          </button>
+          <!-- Game tame set control buttons -->
+          <div class="control" id="control-buttons">
+              <!-- time remove -->
+              <button class="control__button" id="remove-time" data-remove="true">
+                -
+              </button>
+              <!-- time add -->
+              <button class="control__button" id="add-time" data-add="true">
+                +
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+
   
   <script async src="colors.js"></script>
   <script async src="index.js"></script>
