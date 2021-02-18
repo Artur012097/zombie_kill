@@ -6,6 +6,7 @@ let $resultHeader = document.querySelector('#result-header')
 let $result = document.querySelector('#result')
 let $gameTime = document.querySelector('#game-time')
 let $time = document.querySelector('#time')
+let $gameScoreReal = document.querySelector('#game__score')
 let $controlButtons = document.querySelector('#control-buttons')
 let $stopGame = document.querySelector('#stop-game')
 const gameStartMusic = new Audio('../audio/game-start.mp3')
@@ -67,6 +68,8 @@ function setGameTime() {
             stopGame()
         } else {
             $time.textContent = (time - 0.1).toFixed(1)
+            // game score real time show
+            $gameScoreReal.textContent = score
         }
     },100)
 }
