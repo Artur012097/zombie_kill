@@ -31,8 +31,12 @@ body {
 }
 
 .app__header {
+  width: 400px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
-  text-align: center;
 }
 
 .app__content {
@@ -59,14 +63,15 @@ body {
   justify-content: flex-end;
 }
 
-.game-score {
-  width: 40px;
+.time-header {
+  width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   border-radius: 5px;
   margin-right: 2px;
+  overflow: hidden;
   font-size: 1.1rem;
 }
 
@@ -89,6 +94,24 @@ body {
 .control__button:hover, .stop-game:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.mute-button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.mute-button.active {
+  color: red;
+}
+
+.mute-button:hover {
+  cursor: pointer;
 }
 
 .stop-game {
@@ -201,7 +224,7 @@ body {
 }
 
 @media (max-width: 990px) {
-  #header-result, #time-header {
+  #result-header {
     font-size: 1.9rem;
   }
 }
@@ -210,18 +233,21 @@ body {
   .app {
     padding: 0;
   }
-  #header-result, #time-header {
+  #result-header {
     font-size: 1.7rem;
   }
 }
 
 @media (max-width: 450px) {
-  #header-result, #time-header {
+  #result-header {
     font-size: 1.4rem;
   }
   .app {
     width: 100%;
     height: 100vh;
+  }
+  .app__header {
+    width: 100%;
   }
   .app__content {
     width: 100%;
@@ -242,7 +268,7 @@ body {
 }
 
 @media (max-width: 360px) {
-  #header-result, #time-header {
+  #result-header, #time-header {
     font-size: 1.2rem;
   }
   .app__content {
@@ -255,6 +281,11 @@ body {
     padding-right: 0;
     padding-bottom: 0;
   }
+  .mute-button {
+    width: 24px;
+    height: 23px;
+    font-size: 1.4rem;
+  }
   .input {
     width: 100%;
   }
@@ -264,6 +295,11 @@ body {
   .game {
     width: 100%;
     height: 100%;
+  }
+  .time-header {
+    position: absolute;
+    top: -27px;
+    width: 83px;
   }
 }
 
