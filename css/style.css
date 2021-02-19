@@ -53,6 +53,12 @@ body {
   color: #fff;
 }
 
+.game-interface {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .game-score {
   width: 40px;
   display: flex;
@@ -60,7 +66,12 @@ body {
   align-items: center;
   background-color: #fff;
   border-radius: 5px;
+  margin-right: 2px;
   font-size: 1.1rem;
+}
+
+.control {
+  display: flex;
 }
 
 .control__button, .stop-game {
@@ -71,7 +82,7 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 1.3rem;
-  margin: 0 5px;
+  margin: 0 2px;
 }
 
 .control__button:hover, .stop-game:hover {
@@ -211,28 +222,50 @@ body {
     width: 100%;
     height: 100vh;
   }
+  .app__content {
+    width: 100%;
+  }
+  .app__footer {
+    width: 100%;
+  }
   .input {
-    width: 300px;
+    width: 100%;
   }
   .input input {
-    width: 45px;
+    width: 120px;
   }
   .game {
-    width: 350px;
+    width: 95%;
     height: 350px;
   }
 }
 
-@media (max-width: 310px) {
+@media (max-width: 360px) {
   #header-result, #time-header {
     font-size: 1.2rem;
   }
+  .app__content {
+    width: 100%;
+    height: 60%;
+  }
+  .app__footer {
+    width: 95%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
   .input {
-    width: 250px;
+    width: 100%;
+  }
+  .input input {
+    width: 65px;
   }
   .game {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
+  }
+  .control__button, .stop-game, .game-score {
+    width: 35px;
   }
 }
 /*# sourceMappingURL=style.css.map */
