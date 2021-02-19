@@ -103,6 +103,7 @@ function timeChange(e) {
     if (e.target.dataset.remove) {
         $gameTime.value --
         volumeChangeSound.play()
+        volumeChangeSound.currentTime = 0
         if ($gameTime.value <= 0) {
             $gameTime.value = 1
         }
@@ -110,6 +111,7 @@ function timeChange(e) {
     else if (e.target.dataset.add) {
         $gameTime.value ++
         volumeChangeSound.play()
+        volumeChangeSound.currentTime = 0
         if ($gameTime.value >= 999) {
             $gameTime.value = 999
         }
