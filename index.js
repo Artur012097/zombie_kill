@@ -106,6 +106,9 @@ function timeChange(e) {
     } 
     else if (e.target.dataset.add) {
         $gameTime.value ++
+        if ($gameTime.value >= 999) {
+            $gameTime.value = 999
+        }
     }
     setTime()
 }
