@@ -9,8 +9,9 @@ let $time = document.querySelector('#time')
 let $gameScoreReal = document.querySelector('#game__score')
 let $controlButtons = document.querySelector('#control-buttons')
 let $stopGame = document.querySelector('#stop-game')
-const gameStartMusic = new Audio('../audio/game-start.mp3')
-const gameEndMusic = new Audio('../audio/game-end.mp3')
+let gameStartMusic = new Audio(gameMusic[randomBox(0, gameMusic.length)])
+let gameEndMusic = new Audio('../audio/game-end.mp3')
+let volumeChangeSound = new Audio('../audio/volume-change.mp3')
 let score = 0
 let isGameStarted = false
 
@@ -27,6 +28,7 @@ function hide($el) {
 $start.addEventListener('click', startGame)
 document.addEventListener('click', boxClick)
 $gameTime.addEventListener('input', setTime)
+$gameTime.addEventListener('input', maxValue)
 $controlButtons.addEventListener('click', timeChange)
 $stopGame.addEventListener('click', () => {
     if (!isGameStarted) {
@@ -100,12 +102,14 @@ function setResult() {
 function timeChange(e) {
     if (e.target.dataset.remove) {
         $gameTime.value --
+        volumeChangeSound.play()
         if ($gameTime.value <= 0) {
             $gameTime.value = 1
         }
     } 
     else if (e.target.dataset.add) {
         $gameTime.value ++
+        volumeChangeSound.play()
         if ($gameTime.value >= 999) {
             $gameTime.value = 999
         }
@@ -121,6 +125,18 @@ function setTime() {
     show($timeHeader)
     hide($resultHeader)
 }
+
+function maxValue(e) {
+    if ($gameTime.value.length >= 4) {
+        $gameTime.setAttribute('onKeyDown', 'return false')
+        setTimeout( ()=> {
+            $gameTime.removeAttribute('onKeyDown')
+            $gameTime.value = 999
+        }, 700)
+    } 
+}
+
+
 
 function boxClick(e) {
     // box renders when player clicks on it
@@ -173,6 +189,5 @@ function letBoxBg() {
 function randomBox(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
-
 
 
