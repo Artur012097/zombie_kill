@@ -28,7 +28,13 @@ $start.addEventListener('click', startGame)
 document.addEventListener('click', boxClick)
 $gameTime.addEventListener('input', setTime)
 $controlButtons.addEventListener('click', timeChange)
-$stopGame.addEventListener('click', stopGame)
+$stopGame.addEventListener('click', () => {
+    if (!isGameStarted) {
+        return false
+    } else {
+        stopGame()
+    }
+})
 
 function startGame() {
     isGameStarted = true
@@ -78,6 +84,7 @@ function endMusic() {
     gameStartMusic.pause()
     gameStartMusic.currentTime = 0
     gameEndMusic.play()
+    
 }
 
 function startMusic() {
