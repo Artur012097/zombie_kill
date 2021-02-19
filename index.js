@@ -71,7 +71,9 @@ function stopGame () {
     // clear game box elements
     $game.innerHTML = ''
     // shows start button after 1.45s delay
-    setTimeout(show($start), 1450)
+    setTimeout(() => {
+        show($start)
+    }, 1450)
     // change game box background color
     $game.style.backgroundColor = gray
     // remove atribute disabled for time input to set time
