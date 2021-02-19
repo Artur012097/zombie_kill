@@ -134,7 +134,7 @@ function soundeMute() {
 }
 
 // game duration time minimal and maximal values setup function
-function maxValue(e) {
+function maxValue() {
 
     if ($gameTime.value.length >= 4) {
         // disable manual time entry for input if time lenght more than 3
