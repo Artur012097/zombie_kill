@@ -177,7 +177,7 @@ function timeChange(e) {
 // game duration time setup function
 function setTime() {
     // get time input value from DOM
-    let getGameTime = $gameTime.value
+    let getGameTime = parseInt($gameTime.value)
     // set game duration time
     $time.textContent = getGameTime + '.0'
 }
