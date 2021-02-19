@@ -35,26 +35,29 @@
           <!-- Game duration time set input label -->
           <label for="game-time">Время игры, (сек)</label>
           <!-- Game duration time set input -->
-          <input type="number" id="game-time" min="5" step="1" value="5">
-          <!-- game stop button -->
-          <div class="game-score">
+          <input type="number" id="game-time" min="5" max="999" step="1" value="5">
+          <!-- game interface items -->
+          <div class="game-interface">
+            <!-- game stop button -->
+            <div class="game-score">
               <span class="game__score" id="game__score">
                 0
               </span>
-          </div>
-          <button class="stop-game control__button" id="stop-game">
-              <i class="far fa-stop-circle"></i>
-          </button>
-          <!-- Game tame set control buttons -->
-          <div class="control" id="control-buttons">
-              <!-- time remove -->
-              <button class="control__button" id="remove-time" data-remove="true">
-                -
-              </button>
-              <!-- time add -->
-              <button class="control__button" id="add-time" data-add="true">
-                +
-              </button>
+            </div>
+            <button class="stop-game control__button" id="stop-game">
+                <i class="far fa-stop-circle"></i>
+            </button>
+            <!-- Game tame set control buttons -->
+            <div class="control" id="control-buttons">
+                <!-- time remove -->
+                <button class="control__button" id="remove-time" data-remove="true">
+                  -
+                </button>
+                <!-- time add -->
+                <button class="control__button" id="add-time" data-add="true">
+                  +
+                </button>
+            </div>
           </div>
       </div>
   </div>
