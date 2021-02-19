@@ -99,6 +99,20 @@ function setResult() {
     $result.textContent = score
 }
 
+function maxValue(e) {
+    if ($gameTime.value.length >= 4) {
+        $gameTime.setAttribute('onKeyDown', 'return false')
+        setTimeout( ()=> {
+            $gameTime.removeAttribute('onKeyDown')
+            $gameTime.value = 999
+            $time.textContent = 999 + '.0'
+        }, 700)
+    } else if ($gameTime.value <= 0) {
+        $gameTime.value = 1
+        $time.textContent = 1 + '.0'
+    }
+}
+
 function timeChange(e) {
     if (e.target.dataset.remove) {
         $gameTime.value --
@@ -127,18 +141,6 @@ function setTime() {
     show($timeHeader)
     hide($resultHeader)
 }
-
-function maxValue(e) {
-    if ($gameTime.value.length >= 4) {
-        $gameTime.setAttribute('onKeyDown', 'return false')
-        setTimeout( ()=> {
-            $gameTime.removeAttribute('onKeyDown')
-            $gameTime.value = 999
-        }, 700)
-    } 
-}
-
-
 
 function boxClick(e) {
     // box renders when player clicks on it
