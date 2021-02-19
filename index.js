@@ -30,7 +30,7 @@ $stopGame.addEventListener('click', () => {
     } else {
         stopGame()
     }
-})
+});   
 
 // show element global function
 function show($el) {
@@ -107,16 +107,12 @@ function setGameTime() {
 
 // game end music
 function endMusic() {
-    gameStartMusic.pause()
-    gameStartMusic.currentTime = 0
     gameEndMusic.play()
 }
 
 // game start background music
 function startMusic() {
     gameStartMusic.play()
-    gameEndMusic.pause()
-    gameEndMusic.currentTime = 0
 }
 
 // sounde off function
@@ -127,11 +123,13 @@ function soundeMute() {
     if (this.classList.contains('active')) {
         gameStartMusic.volume = 0
         gameEndMusic.volume = 0
+        zombieTrackSound.volume = 0
     } 
     // game sound on if this element doesn't have class active
     else {
         gameStartMusic.volume = 1
         gameEndMusic.volume = 1
+        zombieTrackSound.volume = 0
     }
 }
 
