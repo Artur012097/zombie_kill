@@ -76,7 +76,6 @@ function stopGame () {
     // show control buttons box if game stopped
     show($controlButtons)
     endMusic()
-    setTimeout(startMusic, 2200)
 }
 
 // game duration time set function, shows time on time show block, acts when player clicks on start button and edns when time is up
