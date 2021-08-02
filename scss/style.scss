@@ -38,6 +38,14 @@ section {
     position: relative;
 }
 
+a {
+    transition: .3s ease;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
 // main section
 
 .main {

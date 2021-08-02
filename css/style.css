@@ -27,6 +27,14 @@ section {
   position: relative;
 }
 
+a {
+  transition: .3s ease;
+}
+
+a:hover {
+  opacity: .8;
+}
+
 .main {
   display: flex;
   align-items: center;
