@@ -35,6 +35,32 @@ a:hover {
   opacity: .8;
 }
 
+.wrapper {
+  position: relative;
+}
+
+.wrapper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 40px;
+  height: 100%;
+  border-left: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.wrapper:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 35px;
+  width: 12px;
+  height: 12px;
+  background-image: url(../images/arrow.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .main {
   display: flex;
   align-items: center;
@@ -91,36 +117,106 @@ a:hover {
   background-color: #000;
   text-transform: uppercase;
   color: #fff;
+  position: relative;
 }
 
 .main__skills-block_xd {
   padding: 13px;
-  transform: translateY(130px);
+  transform: translateY(-110vh);
+  animation: skillsBlockXd 1s ease forwards;
 }
 
 .main__skills-block_py {
   padding: 13px 24px;
-  transform: translateY(264px);
+  transform: translateY(-110vh);
+  animation: skillsBlockPy 1s ease .5s forwards;
 }
 
 .main__skills-block_fg {
   padding: 13px 18px;
-  transform: translateY(130px);
+  transform: translateY(-110vh);
+  animation: skillsBlockFg 1s ease 1s forwards;
 }
 
 .main__skills-block_php {
   padding: 13px 22px;
-  transform: translateY(299px);
+  transform: translateY(-110vh);
+  animation: skillsBlockPhp 1s ease 1.5s forwards;
 }
 
 .main__skills-block_c {
   padding: 13px 23px;
-  transform: translateY(196px);
+  transform: translateY(-110vh);
+  animation: skillsBlockC 1s ease 2s forwards;
 }
 
 .main__skills-block_js {
   padding: 13px 28px;
-  transform: translateY(130px);
+  transform: translateY(-110vh);
+  animation: skillsBlockJs 1s ease 2.5s forwards;
+}
+
+@keyframes skillsBlockXd {
+  from {
+    transform: translateY(-110vh);
+  }
+  to {
+    transform: translateY(130px);
+  }
+}
+
+@keyframes skillsBlockPy {
+  from {
+    transform: translateY(-110vh);
+  }
+  to {
+    transform: translateY(264px);
+  }
+}
+
+@keyframes skillsBlockFg {
+  from {
+    transform: translateY(-110vh);
+  }
+  to {
+    transform: translateY(130px);
+  }
+}
+
+@keyframes skillsBlockPhp {
+  from {
+    transform: translateY(-110vh);
+  }
+  to {
+    transform: translateY(299px);
+  }
+}
+
+@keyframes skillsBlockC {
+  from {
+    transform: translateY(-110vh);
+  }
+  to {
+    transform: translateY(196px);
+  }
+}
+
+@keyframes skillsBlockJs {
+  from {
+    transform: translateY(-110vh);
+  }
+  to {
+    transform: translateY(130px);
+  }
+}
+
+.main__skills-block:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100vh;
+  border-left: 2px dashed rgba(0, 0, 0, 0.2);
 }
 
 .main-socials {
@@ -139,10 +235,51 @@ a:hover {
 }
 
 .main-socials__experience-info {
+  width: 60%;
+  text-align: end;
+  align-items: center;
   margin-bottom: 21px;
   position: relative;
   font-weight: 600;
-  font-style: 24px;
+  font-size: 24px;
+  position: relative;
+}
+
+.main-socials__experience-info:before {
+  content: '';
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  top: 0;
+  right: -42px;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  z-index: 1;
+  animation: experiencePoulseIcons 1s ease infinite;
+}
+
+.main-socials__experience-info:after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -34px;
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 1;
+  animation: experiencePoulseIcons 1s ease infinite;
+}
+
+@keyframes experiencePoulseIcons {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+    padding: 0;
+  }
 }
 
 .main-socials__experience-info:last-child {
@@ -166,6 +303,16 @@ a:hover {
   font-weight: 600;
   font-size: 24px;
   color: #fff;
+  position: relative;
+}
+
+.main-socials__links-link:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100vh;
+  border-left: 2px dashed rgba(0, 0, 0, 0.2);
 }
 
 .main-socials__links-link:nth-child(2) {
@@ -219,7 +366,7 @@ a:hover {
 }
 
 .portfolio__title {
-  margin-top: 175px;
+  margin-top: 208px;
   margin-bottom: 100px;
   font-weight: 800;
   font-size: 64px;
