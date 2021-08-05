@@ -311,12 +311,23 @@ a:hover {
   position: absolute;
   top: 0;
   left: 50%;
-  height: 100vh;
   border-left: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.main-socials__links-link:first-child:after {
+  height: 386px;
+}
+
+.main-socials__links-link:nth-child(2):after {
+  height: 195px;
 }
 
 .main-socials__links-link:nth-child(2) {
   transform: translateY(150px);
+}
+
+.main-socials__links-link:last-child:after {
+  height: 388px;
 }
 
 .main-socials__experience {
